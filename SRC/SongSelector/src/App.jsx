@@ -49,7 +49,7 @@ export default function App() {
 
         <footer className="bg-secondary text-secondary-foreground p-4 mt-8">
           <div className="container mx-auto text-center">
-            <p>&copy; 2023 SongSelector. All rights reserved.</p>
+            <p>&copy; 2024 SongSelector by Group 1. All rights reserved.</p>
           </div>
         </footer>
       </div>
