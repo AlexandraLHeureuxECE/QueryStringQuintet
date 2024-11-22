@@ -1,29 +1,18 @@
 import React from 'react'
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import Homepage from './pages/Homepage'
+import SongsPage from './pages/SongsPage'
+import ArtistsPage from './pages/ArtistsPage'
+import AlbumsPage from './pages/AlbumsPage.jsx'
+import CollaborationsPage from './pages/CollaborationsPage.jsx'
+import AwardsPage from './pages/AwardsPage'
+import StreamingPage from './pages/StreamingPage'
+import CompaniesPage from './pages/CompaniesPage.jsx'
+import LabelsPage from './pages/LabelsPage'
+import EventsPage from './pages/EventsPage'
+import ProducersPage from './pages/ProducersPage'
+import GenresPage from './pages/GenresPage'
 import { Button } from "@/components/ui/button"
-
-// Placeholder components for other pages
-const SongsPage = () => (
-  <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-6">Songs</h1>
-    <p>This is the Songs page. Content to be implemented.</p>
-  </div>
-)
-
-const ArtistsPage = () => (
-  <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-6">Artists</h1>
-    <p>This is the Artists page. Content to be implemented.</p>
-  </div>
-)
-
-const AlbumsPage = () => (
-  <div className="container mx-auto p-4">
-    <h1 className="text-3xl font-bold mb-6">Albums</h1>
-    <p>This is the Albums page. Content to be implemented.</p>
-  </div>
-)
 
 export default function App() {
   return (
@@ -36,6 +25,7 @@ export default function App() {
               <Link to="/songs"><Button variant="secondary">Songs</Button></Link>
               <Link to="/artists"><Button variant="secondary">Artists</Button></Link>
               <Link to="/albums"><Button variant="secondary">Albums</Button></Link>
+              <Link to="/labels"><Button variant="secondary">Labels</Button></Link>
             </div>
           </nav>
         </header>
@@ -46,6 +36,14 @@ export default function App() {
             <Route path="/songs" element={<SongsPage />} />
             <Route path="/artists" element={<ArtistsPage />} />
             <Route path="/albums" element={<AlbumsPage />} />
+            <Route path="/collaborations" element={<CollaborationsPage />} />
+            <Route path="/awards" element={<AwardsPage />} />
+            <Route path="/streaming" element={<StreamingPage />} />
+            <Route path="/companies" element={<CompaniesPage />} />
+            <Route path="/labels" element={<LabelsPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/producers" element={<ProducersPage />} />
+            <Route path="/genres" element={<GenresPage />} />
           </Routes>
         </main>
 

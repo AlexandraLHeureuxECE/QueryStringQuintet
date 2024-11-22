@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
@@ -26,8 +27,8 @@ export default function Homepage() {
 
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle>Search the Database</CardTitle>
-          <CardDescription>Find songs, artists, albums, and more</CardDescription>
+          <CardTitle>General Search</CardTitle>
+          <CardDescription>Find songs, artists, albums, and labels</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSearch} className="flex space-x-2">
@@ -53,6 +54,59 @@ export default function Homepage() {
         </CardContent>
       </Card>
 
+      {searchResults.length > 0 && (
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle>Search Results</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {/* TODO: Implement search results display */}
+            <p>Search results will be displayed here</p>
+          </CardContent>
+        </Card>
+      )}
+
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle>Specialized Search</CardTitle>
+          <CardDescription>Explore detailed information and statistics</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link to="/collaborations" className="block">
+              <Button variant="outline" className="w-full">Artist Collaborations</Button>
+            </Link>
+            <Link to="/awards" className="block">
+              <Button variant="outline" className="w-full">Artist Awards</Button>
+            </Link>
+            <Link to="/streaming" className="block">
+              <Button variant="outline" className="w-full">Top Streaming</Button>
+            </Link>
+            <Link to="/companies" className="block">
+              <Button variant="outline" className="w-full">Companies Net Worth</Button>
+            </Link>
+            <Link to="/artists" className="block">
+              <Button variant="outline" className="w-full">Active Band Members</Button>
+            </Link>
+            <Link to="/labels" className="block">
+              <Button variant="outline" className="w-full">Top Active Labels</Button>
+            </Link>
+            <Link to="/songs" className="block">
+              <Button variant="outline" className="w-full">Songs by Artist</Button>
+            </Link>
+            <Link to="/events" className="block">
+              <Button variant="outline" className="w-full">Live Events</Button>
+            </Link>
+            <Link to="/producers" className="block">
+              <Button variant="outline" className="w-full">Producer Contributions</Button>
+            </Link>
+            <Link to="/genres" className="block">
+              <Button variant="outline" className="w-full">Top Genres</Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Card>
           <CardHeader>
@@ -61,6 +115,7 @@ export default function Homepage() {
           </CardHeader>
           <CardContent>
             <p>Total Songs: Loading...</p>
+            <Link to="/songs"><Button>View All Songs</Button></Link>
           </CardContent>
         </Card>
 
@@ -71,6 +126,7 @@ export default function Homepage() {
           </CardHeader>
           <CardContent>
             <p>Total Artists: Loading...</p>
+            <Link to="/artists"><Button>View All Artists</Button></Link>
           </CardContent>
         </Card>
 
@@ -81,21 +137,11 @@ export default function Homepage() {
           </CardHeader>
           <CardContent>
             <p>Total Albums: Loading...</p>
+            <Link to="/albums"><Button>View All Albums</Button></Link>
           </CardContent>
         </Card>
       </div>
-
-      {searchResults.length > 0 && (
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle>Search Results</CardTitle>
-          </CardHeader>
-          <CardContent>
-            {/* TODO: Implement search results display */}
-            <p>Search results will be displayed here</p>
-          </CardContent>
-        </Card>
-      )}
     </div>
   )
 }
+
